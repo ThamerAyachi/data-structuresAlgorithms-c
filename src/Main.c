@@ -7,9 +7,10 @@
 
 #include <stdio.h>
 #include <stdbool.h>
+#include <strings.h>
 
 int main(){
-	int num = arithmeticOperators();
+	int num = mathFunction();
 	printf("%d", num);
 
 	return 0;
@@ -85,6 +86,47 @@ int arithmeticOperators() {
 	float z = x / (float) y;
 
 	printf("%.1f\n", z);
+
+	return 0;
+}
+
+int userInput() {
+	char name[25];
+	int age;
+
+	printf("What's your name?\n");
+//	scanf("%s", &name); // don't accept space.
+	fgets(name, 25, stdin);
+	name[strlen(name)-1] = '\0';
+
+	printf("How old are you?\n");
+	scanf("%d", &age);
+
+	printf("Your name is %s ", name);
+	printf("and you are %d years old\n", age);
+
+	return 0;
+}
+
+#include <math.h>
+
+int mathFunction() {
+	double A = sqrt(9);
+	double B = pow(2, 4); // 2^4
+	int C = round(3.4);   // 3.5 = 4; 3.4 = 3
+	int D = ceil(3.14);	  // 4
+	int E = floor(3.99);  // 3
+	double F = fabs(-100);
+	double G = log(1);
+	// There is more like "cos", "sin", "tan"
+
+	printf("%.lf\n", A);
+	printf("%.lf\n", B);
+	printf("%d\n", C);
+	printf("%d\n", D);
+	printf("%d\n", E);
+	printf("%.lf\n", F);
+	printf("%.lf\n", G);
 
 	return 0;
 }
